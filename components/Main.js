@@ -21,7 +21,7 @@ const Main = ({ number }) => {
           dolor sit amet euismod. Nulla facilisi. Vestibulum at enim leo. Proin
           condimentum, quam quis feugiat suscipit, turpis orci sollicitudin
           ipsum, id suscipit nulla leo euismod nulla. Integer in euismod justo,
-          non congue nunc. Lorem ipsum dolor sit amet, consectetur adipiscing
+          non congue nunc. Lorems ipsum dolor sit amet, consectetur adipiscing
           elit.. Vestibulum at enim leo. Proin condimentum, quam quis feugiat
           suscipit, turpis orci sollicitudin ipsum, id suscipit nulla leo
           euismod nulla. Integer in euismod justo, non congue nunc. Lorem ipsum
