@@ -14,8 +14,8 @@ const Main = ({ number }) => {
         </div>
       </div>
       <div className="max-w-4xl text-white h-full top-20 space-y-4 md:p-14">
-        <h1 className="text-3xl font-bold">SICAK EXPRESSONUZ BİZDEN!</h1>
-        <h3>
+        <h1 className="text-xl lg:text-3xl font-bold">SICAK EXPRESSONUZ BİZDEN!</h1>
+        <h3 className="text-sm md:text-base">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id
           egestas eros. Donec ornare venenatis odio. Aliquam porta venenatis
           dolor sit amet euismod. Nulla facilisi. Vestibulum at enim leo. Proin
@@ -29,7 +29,7 @@ const Main = ({ number }) => {
         </h3>
         <button
           onClick={() => router.push("/order")}
-          className="hover:bg-red-500 transition-all duration-200 px-24 py-4 border rounded-full font-semibold"
+          className="hover:bg-red-500 transition-all duration-200 px-16 py-3 md:px-24 md:py-4 border rounded-full font-semibold"
         >
           Sipariş Ver{" "}
         </button>
