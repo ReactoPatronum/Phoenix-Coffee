@@ -10,6 +10,7 @@ const Product = ({ saved, name, price, SaveStorage, item }) => {
   const [itemName, setItemName] = useState([]);
 
   useEffect(() => {
+    setItemName([]);
     if (cart.length > 0) {
       cart?.map((item) => {
         setItemName((current) => [...current, item.name]);
@@ -46,7 +47,7 @@ const Product = ({ saved, name, price, SaveStorage, item }) => {
       >
         <AiFillHeart
           className={` ${
-            saved.includes(name) ? "text-red-500" : "text-gray-500"
+            saved?.includes(name) ? "text-red-500" : "text-gray-500"
           } w-5 h-5`}
         />
       </div>
