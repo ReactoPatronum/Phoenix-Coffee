@@ -16,7 +16,7 @@ const Products = ({ pagination }) => {
   }, [saved]);
 
   function SaveStorage(name) {
-    if (!saved.includes(name)) {
+    if (!saved?.includes(name)) {
       setSaved((prev) => [...prev, name]);
     } else {
       setSaved(saved.filter((item) => item !== name));
