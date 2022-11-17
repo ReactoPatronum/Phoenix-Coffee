@@ -11,7 +11,7 @@ const Product = ({ saved, name, price, SaveStorage, item }) => {
 
   useEffect(() => {
     setItemName([]);
-    if (cart.length > 0) {
+    if (cart?.length > 0) {
       cart?.map((item) => {
         setItemName((current) => [...current, item.name]);
       });
