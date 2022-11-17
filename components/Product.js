@@ -11,14 +11,14 @@ const Product = ({ saved, name, price, SaveStorage, item }) => {
 
   useEffect(() => {
     setItemName([]);
-    cart.map((item) => {
+    cart?.map((item) => {
       setItemName((current) => [...current, item.name]);
     });
   }, [cart]);
 
 
   function AddCart(item) {
-    if (!cart.includes(item)) {
+    if (!cart?.includes(item)) {
       toast.success(`${item.name} adlı ürün sepetinize eklendi!`);
       setCart((prev) => [...prev, item]);
     } else {
