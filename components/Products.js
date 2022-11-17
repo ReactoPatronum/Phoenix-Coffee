@@ -10,7 +10,7 @@ const Products = ({ pagination }) => {
   }, []);
 
   useEffect(() => {
-    if (saved.length > 0) {
+    if (saved?.length > 0) {
       localStorage.setItem("items", JSON.stringify(saved));
     }
   }, [saved]);

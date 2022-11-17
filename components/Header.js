@@ -48,7 +48,7 @@ const Header = () => {
         >
           <AiFillShopping className="text-2xl" />
           <div className="absolute top-[2px] font-semibold right-[8px] text-black">
-            {cart.length}
+            {cart?.length}
           </div>
         </div>
         <p className="text-2xl">I</p>
@@ -65,8 +65,8 @@ const Header = () => {
       >
         <div className="flex flex-col items-center justify-center">
           <h3 className="text-xl font-semibold underline">SEPETİM</h3>
-          {cart.length > 0 ? (
-            cart.map((item) => {
+          {cart?.length > 0 ? (
+            cart?.map((item) => {
               return (
                 <div
                   className="flex items-center justify-between w-full px-10 mt-5"
