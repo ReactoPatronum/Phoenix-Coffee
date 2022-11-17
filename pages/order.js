@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import { MdFilterAlt } from "react-icons/md";
 import LeftBar from "../components/LeftBar";
@@ -7,8 +7,10 @@ import { BsChevronLeft } from "react-icons/bs";
 import PageNums from "../components/PageNums";
 
 const Order = () => {
+  const [pagination, setPagination] = useState([0, 6]);
+
   return (
-    <div className="">
+    <div className="dark">
       <div className="bg-[#602e0b]">
         <Header />
       </div>
@@ -16,14 +18,13 @@ const Order = () => {
         <div className="px-10 py-3">
           <div className="flex items-center justify-between">
             <div>
-            <p className="font-semibold hidden md:block">
+              <p className="font-semibold hidden md:block">
                 Anasayfa &gt; Kahve Türleri &gt; Çikolata Bazlı Kahveler
               </p>
               <div className="sm:bg-[#602e0b] mt-3 max-w-[150px] text-[#602e0b] bg-white border-[#602e0b] border  lg:hidden space-x-3 flex items-center sm:text-white py-2 px-6 rounded-md">
                 <MdFilterAlt className="w-7 h-7" />
                 <p>FİLTRELE</p>
               </div>
-              
             </div>
             <div className="hidden sm:flex border border-gray-400 max-w-fit rounded-lg px-5 py-3">
               <select>
@@ -44,9 +45,9 @@ const Order = () => {
             <LeftBar />
           </div>
           <div className="col-span-12 lg:col-span-9 ">
-            <Products />
+            <Products pagination={pagination} />
             <div className="flex items-center justify-center">
-              <PageNums />
+              <PageNums setPagination={setPagination} pagination={pagination} />
             </div>
           </div>
         </div>

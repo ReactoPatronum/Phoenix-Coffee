@@ -18,9 +18,9 @@ const LeftBar = () => {
         <div className="space-y-3">
           <h3 className="font-bold mt-3 text-lg">FİYAT ARALIĞI</h3>
           <div className="w-full h-6 border rounded-md relative">
-            <div className="absolute left-10 bg-[#602e0b] h-7 w-7 -top-[2px] z-20 rounded-[3px]"></div>
-            <div className="absolute left-[63px] bg-[#8a4413] h-6 w-20"></div>
-            <div className="absolute left-32 bg-[#602e0b] h-7 w-7 -top-[2px] rounded-[3px]"></div>
+            <div className="absolute bg-[#602e0b] dark:bg-[#602e0b] left-10  h-7 w-7 -top-[2px]  rounded-[3px]"></div>
+            <div className="absolute bg-[#753e17] left-[68px]  h-6 w-16"></div>
+            <div className="absolute left-32 bg-[#602e0b] dark:bg-[#602e0b] h-7 w-7 -top-[2px] rounded-[3px]"></div>
           </div>
         </div>
         <h3 className="font-semibold  text-right mt-3">75₺-2500₺</h3>
@@ -31,7 +31,7 @@ const LeftBar = () => {
             className="border p-2 rounded-md border-gray-400"
             placeholder="Placeholder Text.."
           />
-          <button className="flex items-center justify-center w-full bg-[#602e0b] mt-5 p-2 text-white rounded-md">
+          <button className=" flex items-center justify-center w-full dark:bg-[#602e0b] mt-5 p-2 text-white rounded-md">
             FİLTRELE
           </button>
         </div>

@@ -1,12 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { coffees } from "./Data";
 import Product from "./Product";
 
-const Products = () => {
+const Products = ({ pagination }) => {
+  const [saved, setSaved] = useState([]);
+
+  useEffect(() => {
+    setSaved(JSON.parse(localStorage.getItem("items")));
+  }, []);
+
+  useEffect(() => {
+    if (saved.length > 0) {
+      localStorage.setItem("items", JSON.stringify(saved));
+    }
+  }, [saved]);
+
+  function SaveStorage(name) {
+    if (!saved.includes(name)) {
+      setSaved((prev) => [...prev, name]);
+    } else {
+      setSaved(saved.filter((item) => item !== name));
+    }
+  }
   return (
     <div className="grid grid-cols-6 gap-5">
-      {coffees.map((item) => (
-        <Product key={item.id} name={item.name} price={item.price} />
+      {coffees.slice(pagination[0], pagination[1]).map((item) => (
+        <Product
+        item={item}
+          key={item.id}
+          SaveStorage={SaveStorage}
+          saved={saved}
+          name={item.name}
+          price={item.price}
+        />
       ))}
     </div>
   );
