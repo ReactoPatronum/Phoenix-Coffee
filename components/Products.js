@@ -5,9 +5,8 @@ import Product from "./Product";
 const Products = ({ pagination }) => {
   const [saved, setSaved] = useState([]);
 
-useEffect(() => {
-  localStorage.setItem("items", JSON.stringify("X"));
-    setSaved(JSON.parse(localStorage.getItem("items")));
+  useEffect(() => {
+    setSaved(JSON.parse(localStorage.getItem("items")) || []);
   }, []);
 
   useEffect(() => {
@@ -27,7 +26,7 @@ useEffect(() => {
     <div className="grid grid-cols-6 gap-5">
       {coffees.slice(pagination[0], pagination[1]).map((item) => (
         <Product
-        item={item}
+          item={item}
           key={item.id}
           SaveStorage={SaveStorage}
           saved={saved}
