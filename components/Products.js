@@ -5,7 +5,8 @@ import Product from "./Product";
 const Products = ({ pagination }) => {
   const [saved, setSaved] = useState([]);
 
-  useEffect(() => {
+useEffect(() => {
+  localStorage.setItem("items", JSON.stringify("X"));
     setSaved(JSON.parse(localStorage.getItem("items")));
   }, []);
 
