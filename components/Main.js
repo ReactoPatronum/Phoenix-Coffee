@@ -1,8 +1,10 @@
 import React from "react";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
+import { useCart } from "../context/CartContext";
 
 const Main = ({ number }) => {
+  const { darkMode } = useCart();
   const article = `Aegestas eros. Donec ornare venenatis odio. Aliquam porta venenatis
   dolor sit amet euismod. Nulla facilisi. Vestibulum at enim leo. Proin
   condimentum, quam quis feugiat suscipit, turpis orci sollicitudin
@@ -27,7 +29,11 @@ const Main = ({ number }) => {
   ];
   const router = useRouter();
   return (
-    <div className="space-y-10 p-10">
+    <div
+      className={`space-y-10 p-10 ${
+        darkMode ? "text-white" : "text-black font-semibold"
+      }`}
+    >
       <div className="text-4xl hidden  text-white md:flex items-center  justify-between">
         <div></div>
         <div className="flex items-center space-x-5">
@@ -36,14 +42,14 @@ const Main = ({ number }) => {
           <h3 className="text-gray-300 text-5xl font-semibold">04</h3>
         </div>
       </div>
-      <div className="max-w-4xl text-white h-full md:p-4 xl:p-16">
+      <div className="max-w-4xl  h-full md:p-4 xl:p-16">
         {textData.map((slider, i) => (
           <motion.div
             layout
             key={i}
             initial={{ x: -1000 }}
             animate={{ x: 0 }}
-            transition= {{ delay: 0.1, duration: 0.2, ease: "easeOut" }}
+            transition={{ delay: 0.1, duration: 0.2, ease: "easeOut" }}
             className={`${
               number - 1 == i ? "opacity-100" : " hidden"
             } space-y-4 `}

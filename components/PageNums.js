@@ -58,13 +58,3 @@ const PageNums = ({ pagination, setPagination }) => {
 };
 
 export default PageNums;
-
-{
-  /* <p onClick={()=>setPagination([0,6])} className='text-[#602e0b] bg-white w-5 rounded-md flex items-center justify-center font-semibold'>1</p>
-               c
-               0 6
-               6 12
-                <p onClick={()=>setPagination([12,18])}>3</p>
-                <p onClick={()=>setPagination([18,24])}>4</p>
-                <p onClick={()=>setPagination([24,30])}>5</p> */
-}

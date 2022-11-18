@@ -6,7 +6,7 @@ import { useCart } from "../context/CartContext";
 import toast from "react-hot-toast";
 
 const Product = ({ saved, name, price, SaveStorage, item }) => {
-  const { cart, setCart } = useCart();
+  const { cart, setCart, darkMode } = useCart();
   const [itemName, setItemName] = useState([]);
 
   useEffect(() => {
@@ -29,7 +29,11 @@ const Product = ({ saved, name, price, SaveStorage, item }) => {
   }
 
   return (
-    <div className="relative col-span-6 sm:col-span-3 md:col-span-2 shadow-xl p-4">
+    <div
+      className={`relative col-span-6 sm:col-span-3 md:col-span-2  p-4 ${
+        darkMode ? "shadow-xl" : "shadow-gray-500 shadow-md"
+      }`}
+    >
       <Image alt="coffee" className="w-full   object-cover" src={photo} />
       <h3 className="py-2">{name}</h3>
       <div className=" flex items-center justify-between ">
@@ -43,7 +47,9 @@ const Product = ({ saved, name, price, SaveStorage, item }) => {
       </div>
       <div
         onClick={() => SaveStorage(name)}
-        className="cursor-pointer absolute top-6 right-6 w-7 h-7 flex items-center justify-center bg-white p-1 rounded-full "
+        className={`cursor-pointer absolute top-6 right-6 w-7 h-7 flex items-center justify-center bg-white p-1 rounded-full ${
+          darkMode ? "bg-white" : "bg-gray-300"
+        }`}
       >
         <AiFillHeart
           className={` ${

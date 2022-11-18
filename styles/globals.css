@@ -28,6 +28,10 @@ a {
     background: black;
     
   }
+  button{
+    color: blue;
+    background-color: aqua;
+  }
 }
 
 .wallpaper{

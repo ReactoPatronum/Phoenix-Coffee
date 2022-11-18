@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { AiFillShopping } from "react-icons/ai";
-import { HiBars3 } from "react-icons/hi2";
+import { FaBars } from "react-icons/fa";
 import logo from "../public/logo.png";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useCart } from "../context/CartContext";
 import Modal from "react-modal";
+import { BsMoonStarsFill } from "react-icons/bs";
+import { FaSun } from "react-icons/fa";
+
 
 const Header = () => {
-  const { cart } = useCart();
+  const { cart,darkMode, setDarkMode } = useCart();
   const router = useRouter();
   const [openModal, setOpenModal] = useState(false);
   const [total, setTotal] = useState(0);
@@ -21,8 +24,16 @@ const Header = () => {
     });
   }, [cart]);
 
+  function ChangeDarkMode() {
+    setDarkMode((current) => !current);
+  }
+
   return (
-    <div className="px-6 py-3 flex items-center justify-between text-white border-b border-b-gray-600">
+    <div className={`px-6 py-3 flex items-center justify-between  border-b border-b-gray-600 ${
+      darkMode
+        ? "text-white"
+        : "text-gray-500"
+    }`}>
       <div
         onClick={() => router.push("/")}
         className="flex items-center space-x-3 cursor-pointer"
@@ -41,7 +52,17 @@ const Header = () => {
           <h3>HAKKIMIZDA</h3>
         </Link>
       </div>
-      <div className="cursor-pointer hidden lg:flex items-center space-x-4 ">
+      <div className="cursor-pointer flex items-center justify-center space-x-4 ">
+        <div
+          onClick={ChangeDarkMode}
+          className="w-6 transition-all duration-200"
+        >
+          {darkMode ? (
+            <FaSun className="text-yellow-400 w-6 h-6" />
+          ) : (
+            <BsMoonStarsFill className={`text-gray-400 w-5 h-5`} />
+          )}
+        </div>
         <div
           onClick={() => setOpenModal(true)}
           className="relative hover:scale-110 transition-all duration-200"
@@ -51,12 +72,13 @@ const Header = () => {
             {cart?.length}
           </div>
         </div>
-        <p className="text-2xl">I</p>
-        <h3>Giriş Yap / Kaydol</h3>
+        <div className="lg:hidden border p-1">
+          <FaBars />
+        </div>
+        <p className="text-2xl hidden lg:block">I</p>
+        <h3 className="hidden lg:block">Giriş Yap / Kaydol</h3>
       </div>
-      <div className="lg:hidden border p-1">
-        <HiBars3 />
-      </div>
+
       <Modal
         isOpen={openModal}
         ariaHideApp={false}

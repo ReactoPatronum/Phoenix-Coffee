@@ -5,16 +5,23 @@ import LeftBar from "../components/LeftBar";
 import Products from "../components/Products";
 import { BsChevronLeft } from "react-icons/bs";
 import PageNums from "../components/PageNums";
+import { useCart } from "../context/CartContext";
 
 const Order = () => {
   const [pagination, setPagination] = useState([0, 6]);
-
+  const { darkMode} = useCart();
   return (
-    <div className="dark">
-      <div className="bg-[#602e0b]">
+    <div
+      className={`${
+        darkMode
+          ? "bg-white text-black transition-all duration-300"
+          : "bg-[#121212] text-white transition-all duration-300"
+      }`}
+    >
+      <div className="bg-[#602e0b] ">
         <Header />
       </div>
-      <div className="max-w-[1400px] mx-auto">
+      <div className="max-w-[1400px] mx-auto relative ">
         <div className="px-10 py-3">
           <div className="flex items-center justify-between">
             <div>
@@ -26,9 +33,13 @@ const Order = () => {
                 <p>FİLTRELE</p>
               </div>
             </div>
-            <div className="hidden sm:flex border border-gray-400 max-w-fit rounded-lg px-5 py-3">
-              <select>
-                <option>Varsayılan Sıralama</option>
+            <div
+              className={`hidden sm:flex border  border-gray-700 max-w-fit rounded-lg px-5 py-3 ${
+                darkMode ? "bg-white" : "bg-gray-500 text-gray-800"
+              }`}
+            >
+              <select className={`${darkMode ? "bg-white" : "bg-gray-500"}`}>
+                <option className="">Varsayılan Sıralama</option>
               </select>
             </div>
             <div className="mt-3 sm:hidden flex items-center space-x-2 bg-[#602e0b] text-white  py-2 px-6 rounded-md">
@@ -42,7 +53,7 @@ const Order = () => {
         </div>
         <div className="grid grid-cols-12 px-10">
           <div className="hidden lg:flex lg:col-span-3 xl:col-span-3 ">
-            <LeftBar />
+            <LeftBar darkMode={darkMode} />
           </div>
           <div className="col-span-12 lg:col-span-9 ">
             <Products pagination={pagination} />
