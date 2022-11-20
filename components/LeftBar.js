@@ -18,9 +18,9 @@ const LeftBar = ({darkMode}) => {
         <div className="space-y-3">
           <h3 className="font-bold mt-3 text-lg">FİYAT ARALIĞI</h3>
           <div className={`w-full h-6 border rounded-md relative  ${darkMode?"border-gray-300":" border-gray-600"}`}>
-            <div className="absolute bg-[#602e0b] dark:bg-[#602e0b] left-10  h-7 w-7 -top-[2px]  rounded-[3px]"></div>
-            <div className="absolute bg-[#753e17] left-[68px] -bottom-[1px]  h-6 w-16"></div>
-            <div className="absolute left-32 bg-[#602e0b] dark:bg-[#602e0b] h-7 w-7 -top-[2px] rounded-[3px]"></div>
+            <div className="absolute bg-[#602e0b]  left-10  h-7 w-7 -top-[2px]  rounded-[3px]"></div>
+            <div className="absolute dark:bg-[#753e17] bg-[#753e17] left-[68px] -bottom-[1px]  h-6 w-16"></div>
+            <div className="absolute dark left-32 bg-[#602e0b]  h-7 w-7 -top-[2px] rounded-[3px]"></div>
           </div>
         </div>
         <h3 className="font-semibold  text-right mt-3">75₺-2500₺</h3>
@@ -31,7 +31,7 @@ const LeftBar = ({darkMode}) => {
             className={`border p-2 rounded-md border-gray-400 ${darkMode?"bg-white":"bg-[#6c6866] placeholder:text-gray-300"}`}
             placeholder="Placeholder Text.."
           />
-          <button className={`flex items-center justify-center w-full  mt-5 p-2 text-white rounded-md ${darkMode?"bg-[#602e0b]":"bg-[#602e0b]"}`}>
+          <button className={`dark flex items-center justify-center w-full  mt-5 p-2 text-white rounded-md ${darkMode?"bg-[#602e0b]":"bg-[#602e0b]"}`}>
             FİLTRELE
           </button>
         </div>

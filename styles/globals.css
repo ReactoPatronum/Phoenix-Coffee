@@ -25,12 +25,10 @@ a {
   }
   body {
     color: white;
-    background: black;
-    
+    background: red;
   }
-  button{
-    color: blue;
-    background-color: aqua;
+  .dark{
+    background-color: #602e0b;
   }
 }
 
